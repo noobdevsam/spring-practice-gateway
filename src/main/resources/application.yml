@@ -9,4 +9,6 @@ spring:
                     -   id: spring-practice-rest-mvc
                         uri: http://localhost:8081
                         predicates:
-                            - path= /api/v1/*
+                            - Path= /api/v1/*
+server:
+    port: 8080
