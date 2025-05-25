@@ -12,3 +12,10 @@ spring:
                             - Path= /api/v1/*
 server:
     port: 8080
+
+#logging:
+#    level:
+#        root: error
+#        reactor.netty: trace
+#        org.springframework.cloud.gateway: trace
+#        org.springframework.http.server.reactive: trace
