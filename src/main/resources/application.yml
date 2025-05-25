@@ -1,3 +1,14 @@
 spring:
     application:
         name: spring-practice-gateway
+
+    cloud:
+        gateway:
+            mvc:
+                routes:
+                    -   id: spring-practice-rest-mvc
+                        uri: http://localhost:8081
+                        predicates:
+                            - Path= /api/v1/*
+server:
+    port: 8080
