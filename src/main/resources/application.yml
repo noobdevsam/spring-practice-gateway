@@ -32,3 +32,5 @@ server:
 #        reactor.netty: trace
 #        org.springframework.cloud.gateway: trace
 #        org.springframework.http.server.reactive: trace
+
+# build a docker image with maven: mvn clean package spring-boot:build-image
