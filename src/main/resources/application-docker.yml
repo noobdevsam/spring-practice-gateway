@@ -31,3 +31,7 @@ spring:
             - name: SetRequestHostHeader
               args:
                 host: spring-practice-auth-server
+
+
+# docker container creation command
+# docker run -d --name spring-practice-gateway -p 8080:8080 spring-practice-gateway:0.0.1-SNAPSHOT --spring.profiles.active=docker
