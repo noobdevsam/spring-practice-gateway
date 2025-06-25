@@ -1,0 +1,33 @@
+spring:
+  application:
+    name: spring-practice-gateway
+
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://spring-practice-auth-server:9000
+
+  cloud:
+    gateway:
+      routes:
+        - id: spring-practice-rest-mvc
+          uri: http://spring-practice-restmvc:8080
+          predicates:
+            - Path= /api/v1/**
+        - id: spring-practice-reactive
+          uri: http://spring-practice-reactive:8080
+          predicates:
+            - Path= /api/v2/**
+        - id: spring-practice-reactive-mongo
+          uri: http://spring-practice-reactive-mongo:8080
+          predicates:
+            - Path= /api/v3/**
+        - id: spring-practice-auth-server
+          uri: http://spring-practice-auth-server:9000
+          predicates:
+            - Path= /oauth2/**
+          filters:
+            - name: SetRequestHostHeader
+              args:
+                host: spring-practice-auth-server
