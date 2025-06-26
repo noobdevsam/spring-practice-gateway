@@ -16,7 +16,9 @@ public class SecurityConfig {
 		
 		return http
 			       .authorizeExchange(
-				       exchange -> exchange.anyExchange().authenticated()
+						   exchange -> exchange
+								   .pathMatchers("/oauth2/**", "/oauth2/token").permitAll()
+								   .anyExchange().authenticated()
 			       )
 			       .oauth2ResourceServer(
 				       resourceServer -> resourceServer.jwt(Customizer.withDefaults())
