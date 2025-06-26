@@ -39,3 +39,6 @@ spring:
 # docker container with linked containers
 # docker run -d --name spring-practice-gateway --link spring-practice-auth-server:spring-practice-auth-server -p 8080:8080 spring-practice-gateway:0.0.1-SNAPSHOT --spring.profiles.active=docker
 # here, auth server is linked to the gateway container and the gateway container can access the auth-server using the port 8080 to get a JWT token
+
+# link with auth-server and rest-mvc
+#  docker run -d --name spring-practice-gateway --link spring-practice-auth-server:spring-practice-auth-server --link spring-practice-restmvc:spring-practice-restmvc -p 8080:8080 spring-practice-gateway:0.0.1-SNAPSHOT --spring.profiles.active=docker
