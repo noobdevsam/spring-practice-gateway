@@ -6,7 +6,7 @@ spring:
     oauth2:
       resourceserver:
         jwt:
-          issuer-uri: ${JWT-ISSUER-URI:http://spring-practice-auth-server:9000}
+          issuer-uri: http://${JWT-ISSUER-URI:spring-practice-auth-server}:9000
 
   cloud:
     gateway:
