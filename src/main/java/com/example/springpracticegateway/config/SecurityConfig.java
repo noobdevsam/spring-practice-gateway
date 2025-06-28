@@ -34,7 +34,7 @@ public class SecurityConfig {
         return http
                 .authorizeExchange(
                         exchange -> exchange
-                                .pathMatchers("/oauth2/**", "/oauth2/token").permitAll() // Allow unauthenticated access to these paths
+                                .pathMatchers("/oauth2/**").permitAll() // Allow unauthenticated access to these paths
                                 .anyExchange().authenticated() // Require authentication for all other paths
                 )
                 .oauth2ResourceServer(
